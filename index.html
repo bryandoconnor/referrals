@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tranont | Referral Database</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans">
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/tranontmedia/ExtraCSS/referralstyles.min.css">
+</head>
+
+<body>
+
+<!-- BEGIN NAVBAR -->
+    <div id="Tranont-Referral-Navbar">
+        <nav class="navbar navbar-default" id="Referral-navbar">
+            <div class="container-fluid">
+                <div class="navbar-header"><a class="navbar-brand" href="http://www.tranont.com" style="margin:5px;padding:0px;height:auto;" title="Click to go to the home page."> <img src="https://s3-us-west-2.amazonaws.com/tranontmedia/Images/Site+Links/Tranont+Main+Logo.svg" alt="Tranont logo" width="220px"></a>
+                    <button
+                        class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-2" id="Referral-navtoggle" style="display:none"></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-2">
+                    <ul class="nav navbar-nav" id="Referral-nav" style="margin:5px 10px;"></ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+<!-- END NAVBAR -->
+
+<!-- BEGIN MAIN CONTENT -->
+    <div class="container-fluid No-padding Center" id="Welcome-container">
+        <div id="Welcome-over" class="Welcome-over">
+            <div id="Welcome-div" class="Welcome-div">
+                <div class="row No-margin" id="Welcome-row">
+                    <div class="col-md-12" id="Welcome-column">
+                        <h1 id="Welcome-heading1" style="font-family:'Rock Salt' ; margin:20px auto;text-shadow:2px 2px 5px #000">Welcome!</h1>
+                        <h5 id="Welcome-heading2" style="font-family:'Montserrat'; text-shadow:2px 2px 5px #000">This is Tranont's Retail Partners Form</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid No-padding" id="CheckAll-container">
+        <div class="row No-margin Center" id="CheckAll-row1">
+            <div class="col-md-12" id="CheckAll-Row1-column">
+                <h6 id="CheckAll-Row1-heading" class="Section-heading">Check all that apply:</h6>
+            </div>
+        </div>
+        <div class="row" id="CheckAll-row2" style="margin:10px auto 50px auto">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 Checkbox-column" id="Merchant-column"><div class="checkbox"><label><input type="checkbox" id="nationalCheck" onclick="checkboxFunction()" />Merchant Processing (National)</label></div></div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 Checkbox-column" id="Defend-column"><div class="checkbox"><label><input type="checkbox" id="defendCheck" onclick="checkboxFunction()" />Defend Security (Invisus)</label></div></div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 Checkbox-column" id="JIVE-column"><div class="checkbox"><label><input type="checkbox" id="jiveCheck" onclick="checkboxFunction()" />Business Phones (JIVE)</label></div></div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 Checkbox-column" id="Solar-column"><div class="checkbox"><label><input type="checkbox" id="solarCheck" onclick="checkboxFunction()" />Solar (Affiliate/Velocity)</label></div></div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 Checkbox-column" id="NorthStar-column"><div class="checkbox"><label><input type="checkbox" id="northstarCheck" onclick="checkboxFunction()" />Home Security (NorthStar)</label></div></div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 Checkbox-column" id="CSP-column"><div class="checkbox"><label><input type="checkbox" id="cspCheck" onclick="checkboxFunction()" />Legal &amp; Tax Services (CSP)</label></div></div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 Checkbox-column" id="Energy-column"><div class="checkbox"><label><input type="checkbox" id="energyCheck" onclick="checkboxFunction()" />Tranont Energy </label></div></div>
+        </div>
+    </div>
+    <div class="container-fluid No-padding Center" id="solarContainer" style="display:none">
+        <div class="row No-margin" id="Solar-row">
+            <div class="col-md-12" id="Solar-column1">
+                <h4 id="Solar-heading" class="Section-heading">Solar</h4>
+            </div>
+            <div class="col-md-12" id="Solar-column2">
+                <h4>Please Enter a ZIP Code</h4>
+            </div>
+            <div class="col-md-12" id="Solar-column3" style="margin:10px auto"><input type="number" id="zipNumber" class="Center" value="10001"></div>
+            <div class="col-md-12" id="Solar-column4" style="margin:10px auto">        <!-- This is the event trigger, Clicking the "Submit" button -->
+        <button class="Orange-button Large-button" onclick="zipFunction()">Find Provider</button></div>
+        </div>
+    </div>
+    <div class="container-fluid Center" id="notvalidContainer" style="display:none">
+        <div class="row No-margin" id="NotValid-row">
+            <div class="col-md-12" id="NotValid-column">
+                <h4 id="NotValid-heading" style="color:#ff1a1a">**You Have Not Entered a Valid US ZIP Code. Please Try Again.**</h4>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid No-padding Gray-bg" id="basicContainer" style="display:none">
+        <div class="row No-margin" id="Client-row">
+            <div class="col-md-12 Center" id="Client-Heading-column">
+                <h4 id="Client-heading">Client/Referral Information</h4>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="ClientFirstName-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="ClientFirstName-group"><label class="control-label Form-field" id="ClientFirstName-label">First Name</label><input type="text" id="ClientFirstName-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="ClientLastName-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="ClientLastName-group"><label class="control-label Form-field" id="ClientLastName-label">Last Name</label><input type="text" id="ClientLastName-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="ClientEmail-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="ClientEmail-group"><label class="control-label Form-field" id="ClientEmail-label">Email</label><input type="text" id="ClientEmail-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="ClientPhone-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="ClientPhone-group"><label class="control-label Form-field" id="ClientPhone-label">Phone</label><input type="text" id="ClientPhone-field" style="width:50%"><label class="control-label Form-field" id="ClientExt-label">Ext</label><input type="text" id="ClientExt-field"
+                        style="width:15%"></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="ClientAddress-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="ClientAddress-group"><label class="control-label Form-field" id="ClientAddress1-label">Address</label><input type="text" id="ClientAddress1-field" style="width:50%"><label class="control-label Form-field" id="ClientAddress2-label">Apt/Ste</label><input type="text"
+                        id="ClientAddress2-field" style="width:10%"></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="ClientCity-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="ClientCity-group"><label class="control-label Form-field" id="ClientCity-label">City</label><input type="text" id="ClientCity-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="ClientState-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="ClientState-group"><label class="control-label Form-field" id="ClientState-label">State</label><input type="text" id="ClientState-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="ClientZIP-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="ClientZIP-group"><label class="control-label Form-field" id="ClientZIP-label">ZIP</label><input type="text" id="ClientZIP-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="ClientCompany-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="ClientCompany-group"><label class="control-label Form-field" id="ClientCompany-label">Company</label><input type="text" id="ClientCompany-field" style="width:50%"></div>
+            </div>
+        </div>
+        <div class="row No-margin" id="Associate-row">
+            <div class="col-md-12 Center" id="Associate-Heading-column">
+                <h4 id="Associate-heading">Tranont Associate Information</h4>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="AssociateID-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="AssociateID-group"><label class="control-label Form-field" id="AssociateID-label">Tranont ID #</label><input type="text" id="AssociateID-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="AssociateFirstName-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="AssociateFirstName-group"><label class="control-label Form-field" id="AssociateFirstName-label">First Name</label><input type="text" id="AssociateFirstName-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="AssociateLastName-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="AssociateLastName-group"><label class="control-label Form-field" id="AssociateLastName-label">Last Name</label><input type="text" id="AssociateLastName-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="AssociateEmail-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="AssociateEmail-group"><label class="control-label Form-field" id="AssociateEmail-label">Email</label><input type="text" id="AssociateEmail-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="AssociatePhone-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="AssociatePhone-group"><label class="control-label Form-field" id="AssociatePhone-label">Phone</label><input type="text" id="AssociatePhone-field" style="width:50%"><label class="control-label Form-field" id="AssociateExt-label">Ext</label><input type="text"
+                        id="AssociateExt-field" style="width:15%"></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="AssociateRelationship-column" style="padding:5px 20px"><div class="form-group No-padding No-margin Center"><label class="control-label Form-field">Relationship to Client</label></div>
+
+<div class="Center" style="padding:10px 30px 30px 30px">
+<form>
+  <input list="relationships">
+  <datalist id="relationships">
+    <option value="Friend">
+    <option value="Family Member">
+    <option value="Business Associate">
+    <option value="Customer">
+    <option value="Co-worker">
+    <option value="Other">
+  </datalist>
+</form>
+</div></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="AssociateNotes-column" style="padding:5px 20px; margin:10px auto 100px auto">
+                <div class="form-group No-padding No-margin" id="AssociateNotes-group"><label class="control-label Form-field" id="AssociateNotes-label">Additional Notes</label><input type="text" id="AssociateNotes-field" style="width:50%"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid No-padding Center" id="nationalContainer" style="display:none">
+        <div class="row No-margin" id="National-row">
+            <div class="col-md-12" id="National-Heading-column">
+                <h4 id="National-heading" class="Section-heading">National Processing</h4>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="NationalAmount-column"><div class="form-group No-padding No-margin"><label class="control-label Form-field">Approximate Monthly Processing Amount</label></div>
+
+<div style="padding:5px 5px 20px 5px">
+<form>
+  <input list="amounts">
+  <datalist id="amounts">
+    <option value="< $49,000">
+    <option value="$50,000 - $1,000,000">
+    <option value="> $1,000,000">
+  </datalist>
+</form>
+</div></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Center" id="NationalStatement-column">
+                <div class="form-group No-padding No-margin" id="NationalStatement-group"><label class="control-label Form-field" id="NationalStatement-label">Copy of Merchant Processing Statement</label><a class="btn btn-success Orange-button Large-button" role="button" href="#" id="NationalStatement-button">Upload</a></div>
+            </div>
+            <div class="col-md-12 Center" id="NationalHr-column">
+                <hr id="National-Hr" style="height:1px;width:80%;margin:10px auto;padding:0px;background-color:#888;">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid No-padding" id="defendContainer" style="display:none">
+        <div class="row No-margin" id="Defend-row">
+            <div class="col-md-12 Center" id="Defend-Heading-column">
+                <h4 id="Defend-heading" class="Section-heading">Business Defend</h4>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Center" id="DefendServices-column">
+                <div class="form-group No-padding No-margin" id="DefendServices-group"><label class="control-label Form-field" id="DefendServices-label">Service Types</label></div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 Checkbox-column" id="iDefendEmployee-column"><div class="checkbox"><label><input type="checkbox" id="iDefendEmpCheck" onclick="checkboxFunction()" />iDefend Employee</label></div></div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 Checkbox-column" id="iDefendBusiness-column"><div class="checkbox"><label><input type="checkbox" id="iDefendBusCheck" onclick="checkboxFunction()" />iDefend Business</label></div></div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 Checkbox-column" id="iCare-column"><div class="checkbox"><label><input type="checkbox" id="iCareProCheck" onclick="checkboxFunction()" />iCare Pro</label></div></div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 Checkbox-column" id="InfoSafe-column"><div class="checkbox"><label><input type="checkbox" id="infosafeCheck" onclick="checkboxFunction()" />InfoSafe</label></div></div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="DefendBusinessType-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="DefendBusinessType-group"><label class="control-label Form-field" id="DefendBusinessType-label">Business Type</label><input type="text" id="DefendBusinessType-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="DefendTitle-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="DefendTitle-group"><label class="control-label Form-field" id="DefendTitle-label">Position/Title</label><input type="text" id="DefendTitle-field" style="width:50%"></div>
+            </div>
+            <div class="col-md-12 Center" id="DefendHr-column">
+                <hr id="Defend-Hr" style="height:1px;width:80%;margin:10px auto;padding:0px;background-color:#888;">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid Center No-padding" id="affiliateContainer" style="display:none">
+        <div class="row No-margin" id="Affiliate-row">
+            <div class="col-md-12" id="Affiliate-Heading-column">
+                <h4 id="Affiliate-heading" class="Section-heading">Affiliate Solar</h4>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="AffiliateRent-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="AffiliateRent-group"><label class="control-label Form-field" id="AffiliateRent-label">Do you own or rent?</label>
+                    <div class="checkbox" id="AffiliateRentOwn-group"><label class="control-label" id="AffiliateRentOwn-label"><input type="checkbox" id="AffiliateRentOwn-checkbox">Own</label></div>
+                    <div class="checkbox" id="AffiliateRentRent-group"><label class="control-label" id="AffiliateRentRent-label"><input type="checkbox" id="AffiliateRentRent-checkbox">Rent</label></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="AffilateHouse-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="AffilateHouse-group"><label class="control-label Form-field" id="AffilateHouse-label">House or Apartment?</label>
+                    <div class="checkbox" id="AffilateHouseHouse-group"><label class="control-label" id="AffilateHouseHouse-label"><input type="checkbox" id="AffilateHouseHouse-checkbox">House</label></div>
+                    <div class="checkbox" id="AffilateHouseApt-group"><label class="control-label" id="AffilateHouseApt-label"><input type="checkbox" id="AffilateHouseApt-checkbox">Apartment</label></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="AffiliateResidence-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="AffiliateResidence-group"><label class="control-label Form-field" id="AffiliateResidence-label">Is this your personal residence?</label>
+                    <div class="checkbox" id="AffiliateResidenceYes-group"><label class="control-label" id="AffiliateResidenceYes-label"><input type="checkbox" id="AffiliateResidenceYes-checkbox">Yes</label></div>
+                    <div class="checkbox" id="AffiliateResidenceNo-group"><label class="control-label" id="AffiliateResidenceNo-label"><input type="checkbox" id="AffiliateResidenceNo-checkbox">No</label></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="AffiliateInvestment-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="AffiliateInvestment-group"><label class="control-label Form-field" id="AffiliateInvestment-label">Is this an investment property?</label>
+                    <div class="checkbox" id="AffiliateInvestmentYes-group"><label class="control-label" id="AffiliateInvestmentYes-label"><input type="checkbox" id="AffiliateInvestmentYes-checkbox">Yes</label></div>
+                    <div class="checkbox" id="AffiliateInvestmentNo-group"><label class="control-label" id="AffiliateInvestmentNo-label"><input type="checkbox" id="AffiliateInvestmentNo-checkbox">No</label></div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="AffiliateProvider-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="AffiliateProvider-group"><label class="control-label Form-field" id="AffiliateProvider-label">Who is your electricity provider?</label><input type="text" id="AffiliateProvider-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="AffiliateAccount-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="AffiliateAccount-group"><label class="control-label Form-field" id="AffiliateAccount-label">Account Number</label><input type="text" id="AffiliateAccount-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="AffiliateMeter-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="AffiliateMeter-group"><label class="control-label Form-field" id="AffiliateMeter-label">Meter Number</label><input type="text" id="AffiliateMeter-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="AffiliateUsage-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="AffiliateUsage-group"><label class="control-label Form-field" id="AffiliateUsage-label">Annual Usage (kWh)</label><input type="text" id="AffiliateUsage-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="AffiliateBill-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="AffiliateBill-group"><label class="control-label Form-field" id="AffiliateBill-label">Average Monthly Bill</label><input type="text" id="AffiliateBill-field" style="width:50%"></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="AffiliateCredit-column" style="padding:5px 20px"><div class="form-group No-padding No-margin"><label class="control-label Form-field">My credit rating is most likely:</label></div>
+
+<div style="padding:5px 5px 20px 5px">
+<form>
+  <input list="credit">
+  <datalist id="credit">
+    <option value="550-599">
+    <option value="600-649">
+    <option value="650-720">
+    <option value="720+">
+    <option value="I don't know">
+  </datalist>
+</form>
+</div></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="AffiliateMoney-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="AffiliateMoney-group"><label class="control-label Form-field" id="AffiliateMoney-label">I would like to know how I can make money on my electicity!</label>
+                    <div class="checkbox" id="AffiliateMoneyYes-group"><label class="control-label" id="AffiliateMoneyYes-label"><input type="checkbox" id="AffiliateMoneyYes-checkbox">Yes</label></div>
+                    <div class="checkbox" id="AffiliateMoneyNo-group"><label class="control-label" id="AffiliateMoneyNo-label"><input type="checkbox" id="AffiliateMoneyNo-checkbox">No</label></div>
+                </div>
+            </div>
+            <div class="col-md-12 Center" id="AffiliateHr-column">
+                <hr id="Affiliate-Hr" style="height:1px;width:80%;margin:10px auto;padding:0px;background-color:#888;">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid Center No-padding" id="velocityContainer" style="display:none">
+        <div class="row No-margin" id="Velocity-row">
+            <div class="col-md-12" id="Velocity-Heading-column">
+                <h4 id="Velocity-heading" class="Section-heading">Velocity Solar</h4>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="VelocityProvider-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="VelocityProvider-group"><label class="control-label Form-field" id="VelocityProvider-label">Client's Utility Provider</label><input type="text" id="VelocityProvider-field" style="width:50%"></div>
+            </div>
+            <div class="col-md-12 Center" id="VelocityHr-column">
+                <hr id="Velocity-Hr" style="height:1px;width:80%;margin:10px auto;padding:0px;background-color:#888;">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid No-padding Center" id="energyContainer" style="display:none">
+        <div class="row No-margin" id="Energy-row">
+            <div class="col-md-12" id="Energy-Heading-column">
+                <h4 id="Energy-heading" class="Section-heading">Tranont Energy</h4>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="EnergyContract-column" style="padding:5px 20px">
+                <div class="form-group No-padding No-margin" id="EnergyContract-group"><label class="control-label Form-field" id="EnergyContract-label">Current Contract End Date</label><input type="text" id="EnergyContract-field" class="Center" style="width:30%" placeholder="MM/DD/YY"></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 Center" id="EnergyBill-column">
+                <div class="form-group No-padding No-margin" id="EnergyBill-group"><label class="control-label Form-field" id="EnergyBill-label">Customer Latest Bill (Copy)</label><a class="btn btn-success Orange-button Large-button" role="button" href="#" id="EnergyBill-button">Upload</a></div>
+            </div>
+            <div class="col-md-12 Center" id="EnergyHr-column">
+                <hr id="Energy-Hr" style="height:1px;width:80%;margin:10px auto;padding:0px;background-color:#888;">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid No-padding Center" id="submitContainer" style="display:none; margin:50px auto">
+        <div class="row No-margin" id="Submit-row">
+            <div class="col-md-12" id="Submit-column">
+                <h5 id="Submit-heading" style="font-family:'Montserrat'; font-size:15px; padding:0px 20px;">Please be sure to fill out all fields and then click the button below.&nbsp;</h5><a class="btn btn-success Orange-button Large-button" role="button" href="#" id="Submit-button">&nbsp;Submit Referral</a></div>
+        </div>
+    </div>
+<!-- END MAIN CONTENT -->
+
+<!-- BEGIN FOOTER -->
+    <footer id="Main-footer" style="background-color:#888b8d;margin:0px;padding:0px;">
+        <div id="Referral-Footer-Social-Media-div">
+            <h5 class="text-center" id="Social-Media-heading" style="color:#ffffff;padding:15px 15px; margin:0px"><a href="https://www.facebook.com/Tranontofficial/" target="_blank" id="Facebook-link" style="color:#ffffff;"><i class="fa fa-facebook-square Social-Media-icon" id="Facebook-icon"></i></a> <a href="https://twitter.com/tranont" target="_blank"
+                    id="Twitter-link" style="color:#ffffff;"><i class="fa fa-twitter-square Social-Media-icon" id="Twitter-icon"></i></a> <a href="https://www.linkedin.com/company/tranont" target="_blank" id="LinkedIn-link" style="color:#ffffff;"><i class="fa fa-linkedin-square Social-Media-icon" id="LinkedIn-icon"></i></a>                <a href="https://www.instagram.com/tranont/" target="_blank" id="Instagram-link" style="color:#ffffff;"><i class="fa fa-instagram Social-Media-icon" id="Instagram-icon"></i></a> <a href="https://www.youtube.com/channel/UCDVQ2ve5IikH5_zV9QoQlsQ"
+                    target="_blank" id="YouTube-link" style="color:#ffffff;"><i class="fa fa-youtube-square Social-Media-icon" id="YouTube-icon"></i></a> </h5>
+        </div>
+        <h6 class="text-center" id="Referral-Footer-Copyright-heading" style="color:#ffffff;padding:20px;margin:0px;background-color:rgb(10,10,10);">© Tranont 2018</h6>
+    </footer>
+<!-- END FOOTER -->
+
+<!-- BEGIN JAVASCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/tranontmedia/ExtraJS/referralscript.min.js"></script>
+<!-- END JAVASCRIPT -->
+
+</html>
